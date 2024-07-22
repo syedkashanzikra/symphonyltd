@@ -1,0 +1,58 @@
+﻿@model SymphonyLtd.Models.users
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section bg-gray">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-title" style="padding-top:3rem;">Sign Up</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <form asp-controller="Users" method="post" asp-action="Register">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+ 
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button value="Create" type="submit" data-mdb-button-init
+                                data-mdb-ripple-init class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">
+                            Register
+                        </button>
+                    </div>
+                    <p class="text-center text-muted mt-5 mb-0">
+                        Have already an account? <a href="#!"
+                                                    class="fw-bold text-body"><u>Login here</u></a>
+                    </p>
+                </form>
+            </div>
+            <div class="col-lg-5">
+               <img src="~/images/login-removebg-preview.png" alt="Alternate Text" / class="mb-5">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+﻿@model SymphonyLtd.Models.courses
+
+@{
+    ViewData["Title"] = "courses";
+    Layout = "~/Views/Shared/adminlayout/adminlayout.cshtml";
+}
+
+
+<div class="row my-xl-5">
+    <h1 style="margin-top:3rem;">Courses</h1>
+    <div class="col-lg-7 mb-4 mb-lg-0">
+        <form asp-action="courses">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CoursesName" class="control-label"></label>
+                <input asp-for="CoursesName" class="form-control" />
+                <span asp-validation-for="CoursesName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoursesCovered" class="control-label"></label>
+                <input asp-for="CoursesCovered" class="form-control" />
+                <span asp-validation-for="CoursesCovered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+    <a asp-action="Index">Back to List</a>
+</div>
+

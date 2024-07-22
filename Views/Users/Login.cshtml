@@ -1,0 +1,42 @@
+﻿@model SymphonyLtd.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section bg-gray">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-title" style="padding-top:3rem;">LOGIN</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <form asp-action="Login" method="post" asp-controller="Users">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button value="Create" type="submit" data-mdb-button-init
+                                data-mdb-ripple-init class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <img src="~/images/login-removebg-preview.png" alt="Alternate Text" / class="mb-5">
+            </div>
+        </div>
+    </div>
+</section>
