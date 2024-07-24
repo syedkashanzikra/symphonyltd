@@ -194,7 +194,6 @@ namespace SymphonyLtd.Controllers
 
             return RedirectToAction("Dashboard"); // Redirect to the dashboard
         }
-
         [Route("/dashboard")]
         public IActionResult Dashboard()
         {
@@ -214,19 +213,36 @@ namespace SymphonyLtd.Controllers
                 return RedirectToAction("Login");
             }
 
-            // Pass the user's name to the view
-            ViewBag.UserName = user.Name;
-            return View();
+            // Check the user's role
+            if (user.Role == "User")
+            {
+                // Redirect to the Web controller's index action
+                return RedirectToAction("Index", "Web");
+            }
+            else if (user.Role == "Admin")
+            {
+                // Stay on the dashboard view
+                ViewBag.UserName = user.Name;
+                return View();
+            }
+
+            // If the role is neither User nor Admin, handle accordingly
+            // For example, redirect to a default page or show an error message
+            return RedirectToAction("DefaultPage");
         }
 
+
+
+        [HttpPost]
+        [Route("/logout")]
         public IActionResult Logout()
         {
-            // Clear the user session
+            // Clear the session
             HttpContext.Session.Clear();
-
-            // Redirect to the login page or home page
-            return RedirectToAction("Login");
+            // Redirect to the login page
+            return RedirectToAction("Login", "Users");
         }
+
 
 
     }

@@ -171,6 +171,58 @@ namespace SymphonyLtd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "admin1@example.com",
+                            Name = "Admin One",
+                            Password = "password1",
+                            PhoneNumber = "1234567890",
+                            RememberToken = "token1",
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "admin2@example.com",
+                            Name = "Admin Two",
+                            Password = "password2",
+                            PhoneNumber = "0987654321",
+                            RememberToken = "token2",
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "user1@example.com",
+                            Name = "User One",
+                            Password = "password3",
+                            PhoneNumber = "1111111111",
+                            RememberToken = "token3",
+                            Role = "User"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "user2@example.com",
+                            Name = "User Two",
+                            Password = "password4",
+                            PhoneNumber = "2222222222",
+                            RememberToken = "token4",
+                            Role = "User"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "user3@example.com",
+                            Name = "User Three",
+                            Password = "password5",
+                            PhoneNumber = "3333333333",
+                            RememberToken = "token5",
+                            Role = "User"
+                        });
                 });
 
             modelBuilder.Entity("SymphonyLtd.ViewModels.LoginViewModel", b =>

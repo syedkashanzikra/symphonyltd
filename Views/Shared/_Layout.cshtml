@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -52,10 +54,28 @@
                     </div>
                     <div class="col-lg-8 text-center text-lg-right">
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="@Url.Action("login","Users")" >login</a></li>
-                            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="@Url.Action("register","Users")" >register</a></li>
+                            @if (Context.Session.GetInt32("UserId") != null)
+                            {
+                                <li class="list-inline-item">
+                                    <form action="@Url.Action("Logout", "Users")" method="post" style="display:inline;">
+                                        <button type="submit" class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" style="border:none;background:none;">
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="list-inline-item">
+                                    <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="@Url.Action("Login", "Users")">Login</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="@Url.Action("Register", "Users")">Register</a>
+                                </li>
+                            }
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>

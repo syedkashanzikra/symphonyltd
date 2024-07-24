@@ -505,3 +505,4 @@ F:\Csharp Projects\SymphonyLtd\obj\Debug\net8.0\refint\SymphonyLtd.dll
 F:\Csharp Projects\SymphonyLtd\obj\Debug\net8.0\SymphonyLtd.pdb
 F:\Csharp Projects\SymphonyLtd\obj\Debug\net8.0\SymphonyLtd.genruntimeconfig.cache
 F:\Csharp Projects\SymphonyLtd\obj\Debug\net8.0\ref\SymphonyLtd.dll
+F:\Csharp Projects\SymphonyLtd\obj\Debug\net8.0\SymphonyLtd.sourcelink.json
